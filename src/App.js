@@ -1,9 +1,7 @@
+import Routes from './routes';
+
 function App() {
-  return (
-    <div className="App">
-      a
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
