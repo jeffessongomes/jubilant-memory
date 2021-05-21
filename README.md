@@ -32,7 +32,7 @@ O projeto é um desafio proposto pela Riachuelo.
 </p>
 
 <p align="center">
-	Você pode ver a demonstração nesse site (https://gitsearch-uol.herokuapp.com/)
+	Você pode ver a demonstração nesse site (https://riachuelo--book.herokuapp.com/)
 </p>
 
 ---
