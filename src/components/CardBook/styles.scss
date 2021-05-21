@@ -1,0 +1,105 @@
+.skeleton{
+  margin: 20px 0;
+
+  .skeleton__img{
+    height: 350px;
+    width: 100%;
+  }
+
+  .skeleton__title{
+    height: 50px;
+  }
+
+  .skeleton__description{
+    height: 87px;
+  }
+
+  .skeleton__date{
+    height: 40px;
+  }
+}
+
+.skeletonPagination{
+  height: 50px;
+  margin-bottom: 40px;
+}
+
+.buttonFavorite{
+  border: none;
+  background: transparent;
+  position: absolute;
+
+  top: -10px;
+  right: -17px;
+}
+
+.cardBook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px #D7DBDD;
+
+  background: #FFFFFF;
+
+  border-radius: 5px;
+
+  margin: 20px 0;
+
+  &:hover{
+    text-decoration: none;
+  }
+
+
+  .cardBook__img{
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 5px 5px 0 0;
+  }
+
+  .cardBook__title{
+    font-size: 20px;
+    padding: 0 10px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #17202A;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
+  }
+
+  .cardBook__description{
+    color: #909497;
+
+    padding: 0px 10px;
+
+    text-transform: lowercase;
+    height: 75px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; 
+    -webkit-box-orient: vertical; 
+
+    &::first-letter{ 
+      text-transform: uppercase !important; 
+    }
+  }
+
+  .cardBook__date{
+    width: 100%;
+    text-align: center;
+    border-top: 4px solid #F4F6F7;
+    
+    padding-top: 10px;
+
+    color: #000;
+
+  }
+}

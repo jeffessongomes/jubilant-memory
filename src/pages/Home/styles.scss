@@ -1,81 +1,40 @@
-.header{
-  background: url('../../assets/img/book.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  box-shadow: 0px 2px 15px #273746;
+.navLinks{
+  display: flex;
+  justify-content: center;
 
-  .container-fluid{
-    background: rgba(0, 0, 0, 0.7);
-    
-    .header__containerLogo{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  a{
+    color: #000000;
+    font-size: 20px;
+    padding: 15px;
 
-      margin-top: 100px;
-
-      .header__containerLogo--img{
-        width: 250px;
-        box-shadow: 0 0 80px #FFFFFF inset;
-        padding: 15px;
-        border-radius: 15px;
-
-
-        animation-name: effectLogo;
-        animation-duration: 2s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: 1;
-
-        @keyframes effectLogo {
-          25%{        
-            box-shadow: 0 0 80px #FFFFFF inset;
-          } 
-          
-          50%{
-            box-shadow: 260px 0 50px #FFFFFF inset;
-          }
-
-          75%{
-            box-shadow: -260px 0 80px #FFFFFF inset;
-          }
-
-          100%{
-            box-shadow: 0 0 80px #FFFFFF inset;
-          }
-        }
-      }
+    &:hover{
+      color: #000000;
     }
+  }
+}
 
-    .header__form{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.paginationContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-      margin-top: 10px;
-      margin-bottom: 100px;
+  margin-bottom: 40px;
 
-      .header__form--input{
-        font-size: 16px;
-        height: 45px;
-        width: 450px;
-        border-radius: 10px 0 0 10px;
+  .paginationContainer__button{
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px #CACFD2;
 
-        margin: 0;
-        padding: 0 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
 
-        border: none;
-        outline: none;
-      }
+    margin: 5px;
 
-      .header__form--button{
-        height: 45px;
-        padding: 0 22px 0 20px;
-        background: #1ABC9C;
-        border: none;
-
-        border-radius: 0 10px 10px 0;
-      }
+    &.active{
+      background: #000000;
+      color: #FFFFFF;
     }
   }
 }

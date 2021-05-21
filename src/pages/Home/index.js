@@ -1,28 +1,89 @@
-import { FiSearch } from 'react-icons/fi';
-import { Container, Row, Col } from 'react-bootstrap';
+import { useEffect } from 'react';
 
-import LogoRiachuelo from '../../assets/img/riachuelo.png';
+import {
+  Container, Row, Col,
+} from 'react-bootstrap';
+
+import { Link } from 'react-router-dom';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { retrieveBooks } from '../../ducks/booksSlice';
+
+import CardBook from '../../components/CardBook';
+import CardBookSkeleton from '../../components/CardBook/skeleton';
+import Pagination from '../../components/Pagination';
 
 import './styles.scss';
+import NotFound from '../../components/NotFound';
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const {
+    isLoading,
+    page,
+    isError,
+    items: { items },
+  } = useSelector((state) => state.books);
+
+  useEffect(() => {
+    dispatch(retrieveBooks(page));
+  }, [dispatch]);
+
+  async function handleBooks(e) {
+    if (e) {
+      e.preventDefault();
+    }
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    handleBooks();
+  }, [page]);
+
+  if (isLoading) {
+    return (
+      <CardBookSkeleton />
+    );
+  }
+
+  if (isError) {
+    return (<NotFound />);
+  }
+
   return (
-    <header className="header">
-      <Container fluid>
-        <Row className="justify-content-center">
-          <Col lg={12} className="header__containerLogo">
-            <img src={LogoRiachuelo} loading="lazy" className="header__containerLogo--img" alt="Logo da Riachuelo" />
+    <>
+      <Container>
+        <Row>
+          <Col lg={12}>
+            <div className="navLinks">
+              <Link to="/">
+                Home
+              </Link>
+              <Link to="/favoritos">
+                Favoritos
+              </Link>
+            </div>
           </Col>
-          <Col lg={8}>
-            <form className="header__form">
-              <input type="text" className="header__form--input" placeholder="Digite o nome do livro" />
-              <button type="submit" className="header__form--button">
-                <FiSearch size={24} color="#FFFFFF" />
-              </button>
-            </form>
+        </Row>
+        <Row className="mt-4">
+          {items?.map(((book) => (
+            <Col key={book.id} lg={3} sm={12}>
+              <CardBook
+                id={book?.id}
+                book={book}
+                thumbnail={book?.volumeInfo?.imageLinks?.thumbnail}
+                title={book?.volumeInfo?.title}
+                description={book?.volumeInfo?.description}
+                date={book?.volumeInfo?.publishedDate}
+              />
+            </Col>
+          )))}
+          <Col lg={12} sm={12}>
+            <Pagination />
           </Col>
         </Row>
       </Container>
-    </header>
+    </>
   );
 }
