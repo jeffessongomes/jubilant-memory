@@ -1,0 +1,40 @@
+.navLinks{
+  display: flex;
+  justify-content: center;
+
+  a{
+    color: #000000;
+    font-size: 20px;
+    padding: 15px;
+
+    &:hover{
+      color: #000000;
+    }
+  }
+}
+
+.paginationContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 40px;
+
+  .paginationContainer__button{
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px #CACFD2;
+
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+
+    margin: 5px;
+
+    &.active{
+      background: #000000;
+      color: #FFFFFF;
+    }
+  }
+}

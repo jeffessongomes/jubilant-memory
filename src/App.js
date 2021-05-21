@@ -1,8 +1,13 @@
+import Routes from './routes';
+
+import Header from './components/Header';
+
 function App() {
   return (
-    <div className="App">
-      a
-    </div>
+    <>
+      <Header />
+      <Routes />
+    </>
   );
 }
 
