@@ -22,6 +22,7 @@ const Header = () => {
   } = useSelector((state) => state.books);
 
   function handleSearch(e) {
+    e.preventDefault();
     dispatch(setSearch(e.target.value));
   }
 
