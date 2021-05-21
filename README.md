@@ -1,4 +1,4 @@
-<h1 align="center">Git Search</h1>
+<h1 align="center">React Books</h1>
 
 <p align="center">
   <img alt="Tamanho do Repositório" src="https://img.shields.io/github/repo-size/jeffessongomes/jubilant-memory?style=for-the-badge">
