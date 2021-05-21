@@ -25,7 +25,7 @@ O projeto é um desafio proposto pela Riachuelo.
 
 ---
 
-### :camera_flash: Demonstração [LINK](https://rits-challenge.herokuapp.com)
+### :camera_flash: Demonstração [LINK](https://gitsearch-uol.herokuapp.com/)
 
 <p align="center">
   <img alt="Compasso UOL" src="./.github/assets/banner.png">
